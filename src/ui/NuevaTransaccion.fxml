@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="29.0" layoutY="33.0" text="Cantidad de transaccion: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldTransaccion" layoutX="333.0" layoutY="30.0" />
+      <Label layoutX="89.0" layoutY="94.0" text="Fecha">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePickerFecha" layoutX="320.0" layoutY="91.0" />
+      <Label layoutX="93.0" layoutY="153.0" text="Motivo" />
+      <TextField fx:id="textFieldRazon" layoutX="333.0" layoutY="149.0" />
+      <ComboBox fx:id="prueba" layoutX="185.0" layoutY="30.0" prefHeight="26.0" prefWidth="114.0" promptText="tipo" />
+      <Button fx:id="butonAceptar" layoutX="518.0" layoutY="192.0" mnemonicParsing="false" onAction="#buttonAceptar" style="-fx-background-color: #3e65ff;" text="Aceptar" textFill="WHITE" />
+      <Button fx:id="buttonCancelar" layoutX="14.0" layoutY="192.0" mnemonicParsing="false" style="-fx-background-color: #e43131;" text="Cancelar" textFill="WHITE" />
+   </children>
+</AnchorPane>
