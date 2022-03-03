@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView fx:id="tableContenido" layoutX="36.0" layoutY="80.0" prefHeight="338.0" prefWidth="337.0">
+      <TableView fx:id="tableContenido" layoutX="36.0" layoutY="158.0" prefHeight="338.0" prefWidth="337.0">
         <columns>
           <TableColumn fx:id="tableColumnCantidad" prefWidth="75.0" text="Cantidad" />
           <TableColumn fx:id="tableColumnFecha" prefWidth="75.0" text="Fecha" />
@@ -20,25 +20,38 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="buttonIngresarCambio" layoutX="36.0" layoutY="430.0" mnemonicParsing="false" onAction="#abrirNuevaVentana" style="-fx-background-color: #006fff;" text="Ingresar un nuevo cambio" textFill="WHITE" />
-      <DatePicker fx:id="datePickerDesde" layoutX="11.0" layoutY="42.0" prefHeight="26.0" prefWidth="154.0" />
-      <Label layoutX="171.0" layoutY="41.0" text="-">
+      <Button fx:id="buttonIngresarCambio" layoutX="36.0" layoutY="510.0" mnemonicParsing="false" onAction="#abrirNuevaVentana" style="-fx-background-color: #006fff;" text="Ingresar un nuevo cambio" textFill="WHITE" />
+      <DatePicker fx:id="datePickerDesde" layoutX="22.0" layoutY="122.0" prefHeight="26.0" prefWidth="154.0" />
+      <Label layoutX="182.0" layoutY="121.0" text="-">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <DatePicker fx:id="datePickerHasta" layoutX="184.0" layoutY="42.0" prefHeight="26.0" prefWidth="154.0" />
-      <Label layoutX="123.0" layoutY="14.0" text="Balance: ">
+      <DatePicker fx:id="datePickerHasta" layoutX="195.0" layoutY="122.0" prefHeight="26.0" prefWidth="154.0" />
+      <Label layoutX="36.0" layoutY="25.0" text="Balance: ">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="labelBalance" layoutX="205.0" layoutY="15.0">
+      <Label fx:id="labelBalance" layoutX="99.0" layoutY="25.0" prefHeight="20.0" prefWidth="110.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="butonAplicar" layoutX="348.0" layoutY="42.0" mnemonicParsing="false" onAction="#aplicarFechas" style="-fx-background-color: #FFC300;" text="Aplicar" />
-      <Button fx:id="resetearFecha" layoutX="282.0" layoutY="430.0" mnemonicParsing="false" onAction="#resetearInfoTabla" style="-fx-background-color: #ff0000;" text="Resetear Filtro" textFill="WHITE" />
+      <Button fx:id="butonAplicar" layoutX="359.0" layoutY="122.0" mnemonicParsing="false" onAction="#aplicarFechas" style="-fx-background-color: #FFC300;" text="Aplicar" />
+      <Button fx:id="resetearFecha" layoutX="292.0" layoutY="510.0" mnemonicParsing="false" onAction="#resetearInfoTabla" style="-fx-background-color: #ff0000;" text="Resetear Filtro" textFill="WHITE" />
+      <Label layoutX="37.0" layoutY="53.0" text="Ingreso:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelIngreso" layoutX="99.0" layoutY="55.0" prefHeight="18.0" prefWidth="92.0" />
+      <Label layoutX="41.0" layoutY="78.0" text="Gasto: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelGasto" layoutX="91.0" layoutY="79.0" prefHeight="18.0" prefWidth="110.0" />
+      <Button fx:id="buttonEliminar" layoutX="358.0" layoutY="61.0" mnemonicParsing="false" onAction="#eliminarTransaccion" style="-fx-background-color: #ff0000;" text="Eliminar" textFill="WHITE" />
    </children>
 </AnchorPane>

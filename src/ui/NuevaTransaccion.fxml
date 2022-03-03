@@ -26,6 +26,6 @@
       <TextField fx:id="textFieldRazon" layoutX="333.0" layoutY="149.0" />
       <ComboBox fx:id="prueba" layoutX="185.0" layoutY="30.0" prefHeight="26.0" prefWidth="114.0" promptText="tipo" />
       <Button fx:id="butonAceptar" layoutX="518.0" layoutY="192.0" mnemonicParsing="false" onAction="#buttonAceptar" style="-fx-background-color: #3e65ff;" text="Aceptar" textFill="WHITE" />
-      <Button fx:id="buttonCancelar" layoutX="14.0" layoutY="192.0" mnemonicParsing="false" style="-fx-background-color: #e43131;" text="Cancelar" textFill="WHITE" />
+      <Button fx:id="buttonCancelar" layoutX="14.0" layoutY="192.0" mnemonicParsing="false" onAction="#buttonCancelar" style="-fx-background-color: #e43131;" text="Cancelar" textFill="WHITE" />
    </children>
 </AnchorPane>

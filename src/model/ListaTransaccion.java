@@ -21,6 +21,26 @@ public class ListaTransaccion {
 		return total;
 	}
 	
+	public static double ingreso(ObservableList<Transaccion> dataUssar) {
+		double totalIngreso = 0;
+		for (int i = 0; i<dataUssar.size() ; i++) {
+			if (dataUssar.get(i).getTipo().equals("Ingreso")) {
+				totalIngreso+=dataUssar.get(i).getTransaccion();
+			}
+		}
+		return totalIngreso;
+	}
+	
+	public static double gasto(ObservableList<Transaccion> dataUssar) {
+		double totalGasto = 0;
+		for (int i = 0; i<dataUssar.size() ; i++) {
+			if (dataUssar.get(i).getTipo().equals("Gasto")) {
+				totalGasto+=dataUssar.get(i).getTransaccion();
+			}
+		}
+		return totalGasto;
+	}
+	
 	public static double estadoActualFiltrado () {
 		Double total = 0.0;
 		for (int i = 0; i < dataFiltrada.size(); i++) {

@@ -30,9 +30,9 @@ import model.Transaccion;
 public class VentanaMostrarTablaControl implements Initializable{
 	@FXML
     private Button butonAplicar;
-	
-	@FXML
-    private Button resetearFecha;
+
+    @FXML
+    private Button buttonEliminar;
 
     @FXML
     private Button buttonIngresarCambio;
@@ -45,6 +45,15 @@ public class VentanaMostrarTablaControl implements Initializable{
 
     @FXML
     private Label labelBalance;
+
+    @FXML
+    private Label labelGasto;
+
+    @FXML
+    private Label labelIngreso;
+
+    @FXML
+    private Button resetearFecha;
 
     @FXML
     private TableColumn<Transaccion, Double> tableColumnCantidad;
@@ -81,6 +90,8 @@ public class VentanaMostrarTablaControl implements Initializable{
 		
 		tableContenido.setItems(ListaTransaccion.data);
 		labelBalance.setText(ListaTransaccion.estadoActual()+"");
+		labelGasto.setText(ListaTransaccion.gasto(ListaTransaccion.data)+"");
+		labelIngreso.setText(ListaTransaccion.ingreso(ListaTransaccion.data)+"");
 		
 	}
 	
@@ -101,6 +112,8 @@ public class VentanaMostrarTablaControl implements Initializable{
 			
 			tableContenido.setItems(ListaTransaccion.dataFiltrada);
 			labelBalance.setText(ListaTransaccion.estadoActualFiltrado()+"");
+			labelGasto.setText(ListaTransaccion.gasto(ListaTransaccion.dataFiltrada)+"");
+			labelIngreso.setText(ListaTransaccion.ingreso(ListaTransaccion.dataFiltrada)+"");
 			
 		}
     }
@@ -115,6 +128,11 @@ public class VentanaMostrarTablaControl implements Initializable{
 		
 		tableContenido.setItems(ListaTransaccion.data);
 		labelBalance.setText(ListaTransaccion.estadoActual()+"");
+    }
+	
+	@FXML
+    void eliminarTransaccion(ActionEvent event) {
+
     }
 
 }

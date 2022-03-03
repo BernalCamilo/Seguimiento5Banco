@@ -38,6 +38,19 @@ public class NuevaTransaccionControl implements Initializable{
 
 	@FXML
 	private TextField textFieldTransaccion;
+	
+	@FXML
+    void buttonCancelar(ActionEvent event) throws IOException {
+		 FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/VentanaMostrarTabla.fxml"));
+		 loader.setController(new VentanaMostrarTablaControl());
+		 Parent parent = (Parent) loader.load();
+		 Stage stage = new Stage();
+		 Scene scene = new Scene(parent);
+		 stage.setScene(scene);
+		 stage.show();
+		 Stage stage2 = (Stage) butonAceptar.getScene().getWindow();
+		 stage2.close();
+    }
 	 
 	 @FXML
 	 void buttonAceptar(ActionEvent event) throws IOException {
