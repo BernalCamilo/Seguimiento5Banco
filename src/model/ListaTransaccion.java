@@ -9,13 +9,13 @@ public class ListaTransaccion {
 	public static ObservableList<Transaccion> data = FXCollections.observableArrayList();
 	public static ObservableList<Transaccion> dataFiltrada = FXCollections.observableArrayList();
 	
-	public static double estadoActual () {
+	public static double estadoActual (ObservableList<Transaccion> usarData) {
 		Double total = 0.0;
-		for (int i = 0; i < data.size(); i++) {
-			if (data.get(i).getTipo().equals("Gasto")) {
-				total-=data.get(i).getTransaccion();
+		for (int i = 0; i < usarData.size(); i++) {
+			if (usarData.get(i).getTipo().equals("Gasto")) {
+				total-=usarData.get(i).getTransaccion();
 			} else {
-				total+=data.get(i).getTransaccion();
+				total+=usarData.get(i).getTransaccion();
 			}
 		}
 		return total;
@@ -41,17 +41,6 @@ public class ListaTransaccion {
 		return totalGasto;
 	}
 	
-	public static double estadoActualFiltrado () {
-		Double total = 0.0;
-		for (int i = 0; i < dataFiltrada.size(); i++) {
-			if (dataFiltrada.get(i).getTipo().equals("Gasto")) {
-				total-=dataFiltrada.get(i).getTransaccion();
-			} else {
-				total+=dataFiltrada.get(i).getTransaccion();
-			}
-		}
-		return total;
-	}
 	
 	public static void filtrarData (LocalDate dateDesde, LocalDate dateHasta) {
 		dataFiltrada.clear();

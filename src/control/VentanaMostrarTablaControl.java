@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,6 +29,9 @@ import model.ListaTransaccion;
 import model.Transaccion;
 
 public class VentanaMostrarTablaControl implements Initializable{
+	Transaccion stClicked;
+
+	
 	@FXML
     private Button butonAplicar;
 
@@ -89,9 +93,13 @@ public class VentanaMostrarTablaControl implements Initializable{
 		tableColumnTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
 		
 		tableContenido.setItems(ListaTransaccion.data);
-		labelBalance.setText(ListaTransaccion.estadoActual()+"");
+		labelBalance.setText(ListaTransaccion.estadoActual(ListaTransaccion.data)+"");
 		labelGasto.setText(ListaTransaccion.gasto(ListaTransaccion.data)+"");
 		labelIngreso.setText(ListaTransaccion.ingreso(ListaTransaccion.data)+"");
+		
+		tableContenido.setOnMouseClicked(event -> {
+			stClicked = tableContenido.getSelectionModel().getSelectedItem();
+		});
 		
 	}
 	
@@ -111,7 +119,7 @@ public class VentanaMostrarTablaControl implements Initializable{
 			tableColumnTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
 			
 			tableContenido.setItems(ListaTransaccion.dataFiltrada);
-			labelBalance.setText(ListaTransaccion.estadoActualFiltrado()+"");
+			labelBalance.setText(ListaTransaccion.estadoActual(ListaTransaccion.dataFiltrada)+"");
 			labelGasto.setText(ListaTransaccion.gasto(ListaTransaccion.dataFiltrada)+"");
 			labelIngreso.setText(ListaTransaccion.ingreso(ListaTransaccion.dataFiltrada)+"");
 			
@@ -127,12 +135,18 @@ public class VentanaMostrarTablaControl implements Initializable{
 		tableColumnTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
 		
 		tableContenido.setItems(ListaTransaccion.data);
-		labelBalance.setText(ListaTransaccion.estadoActual()+"");
+		labelBalance.setText(ListaTransaccion.estadoActual(ListaTransaccion.data)+"");
+		labelGasto.setText(ListaTransaccion.gasto(ListaTransaccion.data)+"");
+		labelIngreso.setText(ListaTransaccion.ingreso(ListaTransaccion.data)+"");
     }
 	
 	@FXML
     void eliminarTransaccion(ActionEvent event) {
-
+		ListaTransaccion.data.remove(stClicked);
+		tableContenido.setItems(ListaTransaccion.data);
+		labelBalance.setText(ListaTransaccion.estadoActual(ListaTransaccion.data)+"");
+		labelGasto.setText(ListaTransaccion.gasto(ListaTransaccion.data)+"");
+		labelIngreso.setText(ListaTransaccion.ingreso(ListaTransaccion.data)+"");
     }
 
 }
